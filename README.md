@@ -5,7 +5,7 @@
 
 -->
 
-By [Gerardo Garcia Mendez](author URL goes here).
+By [Gerardo Garcia Mendez](https://twitter.com/Geraz69).
 
 
 ## Installation
@@ -20,7 +20,7 @@ $ mkdir classes
 $ lib/scala-2.11.7/bin/scalac -d classes -cp classes:lib/scalatest_2.11-2.2.6.jar src/*.scala
 ```
 
-* you need to have Java 1.7 installed
+Note: you need to have Java 1.7 installed
 
 ## Usage
 
@@ -32,7 +32,7 @@ $ lib/scala-2.11.7/bin/scala -classpath classes MarsRovers data.txt
 
 The first parameter needs to be the location (absolute or relative to the repo root) of a file containing the positions about the rovers and instructions to move them.
 
-The output of the program will be the final position of the rovers in the input or a stacktrace id there is an logical or IO error.
+The output of the program will be the final position of the rovers in the input or a stacktrace if there is an logical or IO error.
 
 
 ## Test Cases
