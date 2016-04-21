@@ -8,41 +8,35 @@
 By [Gerardo Garcia Mendez](https://twitter.com/Geraz69).
 
 
-## Installation
+## Prerequirements
 
-Git clone this repo. Scala and all the needed libraries are shiped with it for convenience
+You will need Java 1.7 and [SBT](http://www.scala-sbt.org/) up and running to run this codebase. Install it for [Windows](http://www.scala-sbt.org/0.13/docs/Installing-sbt-on-Windows.html), [Mac](http://www.scala-sbt.org/0.13/docs/Installing-sbt-on-Mac.html) or [Linux](http://www.scala-sbt.org/0.13/docs/Installing-sbt-on-Linux.html).
 
-After you have it go inside the repo root and compile the source code:
+After SBT is installed git clone this repo and go inside the repo root. Then run the compiler.
 
 ```bash
 $ cd marsrovers-scala
-$ mkdir classes
-$ lib/scala-2.11.7/bin/scalac -d classes -cp classes:lib/scalatest_2.11-2.2.6.jar src/*.scala
+$ sbt compile
 ```
-
-Note: you need to have Java 1.7 installed
+NOTE: First time takes longer since it downloads Scala and SBT itself.
 
 ## Usage
 
 To run it use the following command:
 
 ```bash
-$ lib/scala-2.11.7/bin/scala -classpath classes MarsRovers data.txt
+$ sbt "run-main MarsRovers data.txt"
 ```
 
-The first parameter needs to be the location (absolute or relative to the repo root) of a file containing the positions about the rovers and instructions to move them.
+The parameter after MarsRovers needs to be the location (absolute or relative to the repo root) of a file containing the positions about the rovers and instructions to move them.
 
 The output of the program will be the final position of the rovers in the input or a stacktrace if there is an logical or IO error.
-
 
 ## Test Cases
 
 You can run the unit tests with this command:
 
 ```bash
-$ lib/scala-2.11.7/bin/scala -classpath classes:lib/scalatest_2.11-2.2.6.jar org.scalatest.run MarsRoversSpec
+$ sbt test
 ```
 
-## License
-
-GNU GPL lincence applies.
