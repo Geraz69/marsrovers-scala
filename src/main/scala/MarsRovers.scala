@@ -43,7 +43,8 @@ object MarsRovers extends App {
     }
   } catch {
     // If there is an exception we catch it and only show the message
-    case e: RuntimeException => throw e;
+    case e: IllegalArgumentException => println(e); System.exit(2)
+    case e: Exception => println(e); throw e
   }
 }
 
